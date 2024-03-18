@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml-stylesheet type="text/xsl" href="yc1.xsl"?> -->
+<!-- <?xml-stylesheet type="text/xsl" href="yc2.xsl"?> -->
+<?xml-stylesheet type="text/xsl" href="yc3.xsl"?>
+<!-- <?xml-stylesheet type="text/xsl" href="yc4.xsl"?> -->
+<!-- <?xml-stylesheet type="text/xsl" href="yc5.xsl"?> -->
+
+<Products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Product_Schema.xsd">
+
+	<Product>
+        <Id>1</Id>
+        <Name>Áo sơ mi</Name>
+        <Category_Id>1</Category_Id>
+        <Desscription>Sơ mi cao cấp</Desscription>
+        <Amount>100</Amount>
+        <Price>1000000</Price>
+        <Size>M</Size>
+        <Image type="jpg" src="a.jpg"/>
+    </Product>
+    
+    <Product>
+        <Id>2</Id>
+        <Name>Quần bò</Name>
+        <Category_Id>2</Category_Id>
+        <Desscription>Quần bò rách</Desscription>
+        <Amount>200</Amount>
+        <Price>200000</Price>
+        <Size>L</Size>
+        <Image type="png" src="Anh.png"></Image>
+    </Product>
+    
+    <Product>
+        <Id>3</Id>
+        <Name>Quần âu</Name>
+        <Category_Id>3</Category_Id>
+        <Desscription>Quần âu</Desscription>
+        <Amount>1000</Amount>
+        <Price>1000000</Price>
+        <Size>XL</Size>
+        <Image type="jpg" src="1.jpg"></Image>
+    </Product>
+    
+    <Product>
+        <Id>4</Id>
+        <Name> Quần Ngố</Name>
+        <Category_Id>4</Category_Id>
+        <Desscription>Ngố tàu</Desscription>
+        <Amount>1</Amount>
+        <Price>100000000</Price>
+        <Size>XXL</Size>
+        <Image type="jpg" src="Pro.jpg"></Image>
+    </Product>
+</Products>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified">
+
+	<xs:element name="Id" type="xs:positiveInteger"></xs:element>
+
+	<xs:element name="Name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="3"></xs:minLength>
+				<xs:maxLength value="50"></xs:maxLength>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="Category_Id">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="1"></xs:minInclusive>
+				<xs:maxInclusive value="9"></xs:maxInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="Desscription">
+		<xs:simpleType>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[\s\w\n]*"></xs:pattern>
+			<xs:maxLength value="128"></xs:maxLength>
+		</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="Amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="0"></xs:minInclusive>
+				<xs:maxInclusive value="9999"></xs:maxInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="Price">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="100"></xs:minInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="Size">
+     	<xs:simpleType>
+     		<xs:restriction base="xs:string">
+     			<xs:enumeration value="M"></xs:enumeration>
+     			<xs:enumeration value="L"></xs:enumeration>
+     			<xs:enumeration value="XL"></xs:enumeration>
+     			<xs:enumeration value="XXL"></xs:enumeration>
+     		</xs:restriction>
+     	</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="Image">
+		<xs:complexType>
+       	<xs:attribute name="type" type="xs:string" use="required"></xs:attribute>
+       	<xs:attribute name="src" type="xs:string" use="optional"></xs:attribute>
+       </xs:complexType>
+	</xs:element>
+
+	<xs:element name="Product">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Id"></xs:element>
+				<xs:element ref="Name"></xs:element>
+				<xs:element ref="Category_Id"></xs:element>
+				<xs:element ref="Desscription"></xs:element>
+				<xs:element ref="Amount"></xs:element>
+				<xs:element ref="Price"></xs:element>
+				<xs:element ref="Size"></xs:element>
+				<xs:element ref="Image"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Products">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Product" minOccurs="0"
+					maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		 <xs:unique name="uniqueId">
+            <xs:selector xpath="Product/Id"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:unique>
+	</xs:element>
+</xs:schema>
